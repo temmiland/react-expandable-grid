@@ -1,24 +1,18 @@
 {
   "name": "react-expandable-grid",
-  "version": "1.0.3",
+  "version": "2.0",
   "description": "Image grid with an expanding detail view",
-  "main": "lib/index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/karthicashokan/react-expandable-grid.git"
+    "url": "https://github.com/tomxpcvx/react-expandable-grid.git"
   },
   "bugs": {
-    "url": "https://github.com/karthicashokan/react-expandable-grid.git"
+    "url": "https://github.com/tomxpcvx/react-expandable-grid.git"
   },
-  "homepage": "https://github.com/karthicashokan/react-expandable-grid.git",
-  "scripts": {
-    "start": "./node_modules/.bin/babel src --watch --out-dir lib",
-    "build": "./node_modules/.bin/babel src --out-dir lib",
-    "test": "mocha --compilers js:babel/register",
-    "prepublish": "rm -rf lib && npm run build"
-  },
+  "homepage": "https://tomxpcvx.dev/react-expandable-grid",
+  "type": "module",
   "keywords": [
-   "react",
+    "react",
     "gallery",
     "grid",
     "portfolio",
@@ -26,20 +20,28 @@
     "preview",
     "thumbnail"
   ],
-  "author": "Karthic Ashokan <karthicashokan@icloud.com>",
+  "author": "Tom Pietsch <hello@tomxpcvx.dev>; Karthic Ashokan <karthicashokan@icloud.com>",
   "license": "MIT",
-  "peerDependencies": {
-    "react": "^15.1.0",
-    "react-dom": "^15.1.0"
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "preview": "vite preview"
   },
   "dependencies": {
-    "object-assign": "^4.0.1"
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "babel": "^5.8.21",
-    "mocha": "^2.3.3",
-    "react": "^15.1.0",
-    "react-addons-test-utils": "^15.0.2",
-    "react-dom": "^15.1.0"
+    "@types/react": "^18.2.55",
+    "@types/react-dom": "^18.2.19",
+    "@typescript-eslint/eslint-plugin": "^6.21.0",
+    "@typescript-eslint/parser": "^6.21.0",
+    "@vitejs/plugin-react": "^4.2.1",
+    "eslint": "^8.56.0",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.5",
+    "typescript": "^5.2.2",
+    "vite": "^5.1.0"
   }
 }
