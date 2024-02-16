@@ -1,0 +1,26 @@
+name: Bun CI
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: oven-sh/setup-bun@v1
+        with:
+            bun-version: 1
+      - run: bun install
+      - run: bun run build --mode=preview
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@v4.5
+        with:
+          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+          BRANCH: gh-pages
+          FOLDER: dist
+        env:
+          CI: true
