@@ -29,9 +29,7 @@ import dts from 'vite-plugin-dts'
 export default (opts: { mode: "production" | "preview" }) => defineConfig({
 	plugins: [
 		react(),
-		dts({
-			include: ['lib']
-		})
+		opts.mode !== 'preview' && dts({ include: ['lib'] })
 	],
 	base: opts.mode !== 'preview' ? '/' : '/react-expandable-grid/',
 	build: opts.mode !== "preview"
