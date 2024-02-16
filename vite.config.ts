@@ -33,6 +33,7 @@ export default (opts: { mode: "production" | "preview" }) => defineConfig({
 			include: ['lib']
 		})
 	],
+	base: opts.mode !== 'preview' ? '/' : '/react-expandable-grid/',
 	build: opts.mode !== "preview"
 		? {
 			copyPublicDir: false,
