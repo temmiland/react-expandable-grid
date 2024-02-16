@@ -5,14 +5,15 @@ on:
     branches:
       - main
   workflow_dispatch:
-
+permissions:
+  contents: write
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
 
-      - name: Use bun install and build
+      - name: Use bun
         uses: oven-sh/setup-bun@v1
         with:
             bun-version: 1
