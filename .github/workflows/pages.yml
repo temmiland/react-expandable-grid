@@ -21,13 +21,13 @@ jobs:
       - name: Install Dependencies
         run: |
           bun install --frozen-lockfile
-          bun run build --mode=preview
+          bun run build-storybook
       
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4.5.0
         with:
           ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
           BRANCH: gh-pages
-          FOLDER: dist
+          FOLDER: storybook-static
         env:
           CI: true
