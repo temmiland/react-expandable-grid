@@ -40,7 +40,7 @@ bun i
 bun run dev
 ```
 
-Then open [`localhost:5173`](http://localhost:5173) in a browser.
+Then open [`localhost:6006`](http://localhost:6006) in a browser.
 
 ## Installation
 
