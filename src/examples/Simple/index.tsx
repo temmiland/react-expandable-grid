@@ -21,45 +21,45 @@
 	OTHER DEALINGS IN THE SOFTWARE.
 */
 
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import { ExpandableGrid } from '../lib/main';
-import { ExpandableElement } from '../lib/components/ExpandableGrid';
+import { ExpandableGrid } from '../../../lib/main';
+import { ExpandableElement } from '../../../lib/components/ExpandableGrid';
 
-ReactDOM.createRoot(
-	document.getElementById('root')!)
-		.render(
-			<React.StrictMode>
-				<ExpandableGrid
-					elements={ Array<ExpandableElement>(15).fill({
-						expandableElement: ({ currentIndex }) => (
-							<div style={ {
-								width: 300,
-								height: 300,
-								background: 'red',
-								color: 'white',
-								marginTop: 10
-							} }>
-								{ 'Expandable ' }
-								{ currentIndex }
-							</div>
-						),
-						expandedElement: ({ currentIndex, close }) => (
-							<div style={ {
-								width: '100%',
-								height: 300,
-								background: 'blue',
-								color: 'white',
-								marginTop: 10
-							} }>
-								{ 'Expanded ' }
-								{ currentIndex }
-								<button onClick={ close }>{ 'Close' }</button>
-							</div>
-						)
-					}) }
-					expandableElementWidthInPx={ 300 }
-					fbJustifyContent='space-between'
-				/>
-			</React.StrictMode>
-		);
+type SimpleProps = {
+	size: number,
+	elements: number,
+	fbJustifyContent: "space-between" | "space-around" | "space-evenly"
+}
+
+export const Simple = ({ size, elements, fbJustifyContent }: SimpleProps) => (
+	<ExpandableGrid
+		elements={ Array<ExpandableElement>(elements).fill({
+			expandableElement: ({ currentIndex }) => (
+				<div style={ {
+					width: size,
+					height: size,
+					background: 'red',
+					color: 'white',
+					marginTop: 10
+				} }>
+					{ 'Expandable ' }
+					{ currentIndex }
+				</div>
+			),
+			expandedElement: ({ currentIndex, close }) => (
+				<div style={ {
+					width: '100%',
+					height: size,
+					background: 'blue',
+					color: 'white',
+					marginTop: 10
+				} }>
+					{ 'Expanded ' }
+					{ currentIndex }
+					<button onClick={ close }>{ 'Close' }</button>
+				</div>
+			)
+		}) }
+		expandableElementWidthInPx={ size }
+		fbJustifyContent={ fbJustifyContent }
+	/>
+);
