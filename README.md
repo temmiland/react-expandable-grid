@@ -29,7 +29,7 @@ Trying it out is always simpler than just reading about it. Take a look at the d
 
 ## Demo
 
-You can reach the Demo here: [`https://tomxpcvx.dev/react-expandable-grid`](https://tomxpcvx.dev/react-expandable-grid)
+You can reach the Demo here: [`https://ghp.pietsch.earth/react-expandable-grid`](https://ghp.pietsch.earth/react-expandable-grid)
 
 To try it locally, run:
 
