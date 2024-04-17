@@ -44,11 +44,13 @@ export type ExpandableElement = {
  * @property {number} expandableElementWidthInPx - Width of each expandable element in pixels.
  * @property {'space-between' | 'space-around' | 'space-evenly'} [fbJustifyContent='space-between']
  *     - Optional prop for flexbox justify content property.
+ * @property {number} defaultSelectedIndex - Optional; default selection of an element with index
  */
 export type ExpandableGridProps = {
   elements: ExpandableElement[];
   expandableElementWidthInPx: number;
   fbJustifyContent?: 'space-between' | 'space-around' | 'space-evenly';
+  defaultSelectedIndex?: number | undefined
 };
 
 /**
@@ -59,12 +61,16 @@ export type ExpandableGridProps = {
 export const ExpandableGrid: React.FC<ExpandableGridProps> = ({
 	elements,
 	expandableElementWidthInPx,
-	fbJustifyContent: flexboxJustifyContent = 'space-between'
+	fbJustifyContent: flexboxJustifyContent = 'space-between',
+	defaultSelectedIndex = undefined,
 }: ExpandableGridProps): React.ReactElement => {
 
 	const [ width, elemReference ] = useElementWidth();
 
-	const [ selectedIndex, setSelectedIndex ] = useState<number | undefined>(undefined);
+	// + 1 to correct the internal counting
+	const [ selectedIndex, setSelectedIndex ] = useState<number | undefined>(
+		defaultSelectedIndex! + 1
+	);
 	
 	const maxExpandedElementsPerRow = Math.floor(width / expandableElementWidthInPx);
 
