@@ -88,6 +88,7 @@ yarn i @tomxpcvx/react-expandable-grid
     }) }
     expandableElementWidthInPx={ 300 }
     fbJustifyContent='space-between'
+    defaultSelectedIndex={ 0 }
 />
 ```
 
@@ -98,10 +99,11 @@ yarn i @tomxpcvx/react-expandable-grid
 | elements                    | `Array<ExpandableElement>`  | The list of expandable elements.               |                                                         |
 | expandableElementWidthInPx  | `number`                    | The width of one expandable element.           | `px`                                                    |
 | fbJustifyContent            | `string`                    | The mode for the CSS property justify-content. | one of: `space-between \| space-around \| space-evenly` |
+| defaultSelectedIndex        | `number`                    | Default selection of an element with an index  | starts at 0                                             |
 
 ### Notes
 
-#### Default values:
+#### Default values
 
 ```javascript
 fbJustifyContent = 'space-between'
