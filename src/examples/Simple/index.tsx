@@ -61,5 +61,6 @@ export const Simple = ({ size, elements, fbJustifyContent }: SimpleProps) => (
 		}) }
 		expandableElementWidthInPx={ size }
 		fbJustifyContent={ fbJustifyContent }
+		defaultSelectedIndex={1}
 	/>
 );

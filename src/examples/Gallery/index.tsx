@@ -125,6 +125,7 @@ export const Gallery = ({ size, elements, fbJustifyContent }: SimpleProps) => (
 			}) }
 			expandableElementWidthInPx={ size }
 			fbJustifyContent={ fbJustifyContent }
+			defaultSelectedIndex={3}
 		/>
 	</div>
 );
