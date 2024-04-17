@@ -23,11 +23,13 @@ export type ExpandableElement = {
  * @property {number} expandableElementWidthInPx - Width of each expandable element in pixels.
  * @property {'space-between' | 'space-around' | 'space-evenly'} [fbJustifyContent='space-between']
  *     - Optional prop for flexbox justify content property.
+ * @property {number} defaultSelectedIndex - Optional; default selection of an element with index
  */
 export type ExpandableGridProps = {
     elements: ExpandableElement[];
     expandableElementWidthInPx: number;
     fbJustifyContent?: 'space-between' | 'space-around' | 'space-evenly';
+    defaultSelectedIndex?: number | undefined;
 };
 /**
  * A grid component that renders a collection of expandable elements.
