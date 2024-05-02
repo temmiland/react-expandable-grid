@@ -1,5 +1,5 @@
 <!--
-    Copyright 2024 Tom Pietsch
+    Copyright 2024 Temmi Pietsch
 
     Permission is hereby granted, free of charge, to any person obtaining a copy of
     this software and associated documentation files (the “Software”), to deal in
@@ -21,7 +21,7 @@
     OTHER DEALINGS IN THE SOFTWARE.
 -->
 
-# react-expandable-grid  - [![npm](https://img.shields.io/npm/v/@tomxpcvx/react-expandable-grid.svg?color=%2345bf17&style=popout)](https://www.npmjs.com/package/@tomxpcvx/react-expandable-grid)
+# react-expandable-grid  - [![npm](https://img.shields.io/npm/v/@temmiland/react-expandable-grid.svg?color=%2345bf17&style=popout)](https://www.npmjs.com/package/@temmiland/react-expandable-grid)
 
 react-expandable-grid is a simple-to-use component designed to create grids with an expanding detail view. It provides an easy solution for quickly setting up galleries and portfolios in your React applications. With this component, when a user clicks on an element of your choice, a preview window opens up, displaying a larger (or smaller, depending on the settings) area where you can customize and showcase your content as desired.
 
@@ -29,12 +29,12 @@ Trying it out is always simpler than just reading about it. Take a look at the d
 
 ## Demo
 
-You can reach the Demo here: [`https://ghp.pietsch.earth/react-expandable-grid`](https://ghp.pietsch.earth/react-expandable-grid)
+You can reach the Demo here: [`https://demo.temmi.land/react-expandable-grid`](https://demo.temmi.land/react-expandable-grid)
 
 To try it locally, run:
 
 ```bash
-git clone git@github.com:tomxpcvx/react-expandable-grid.git
+git clone git@github.com:temmiland/react-expandable-grid.git
 cd react-expandable-grid
 bun i
 bun run dev
@@ -47,12 +47,12 @@ Then open [`localhost:6006`](http://localhost:6006) in a browser.
 A straightforward method for using react-expandable-grid involves installing it from the NPM registry and integrating it into your React build process.
 
 ```bash
-bun i @tomxpcvx/react-expandable-grid
+bun i @temmiland/react-expandable-grid
 
 # or for those living under a rock :D
-npm i @tomxpcvx/react-expandable-grid
-pnpm i @tomxpcvx/react-expandable-grid
-yarn i @tomxpcvx/react-expandable-grid
+npm i @temmiland/react-expandable-grid
+pnpm i @temmiland/react-expandable-grid
+yarn i @temmiland/react-expandable-grid
 ```
 
 ## Usage
@@ -120,7 +120,7 @@ To build, watch and serve the examples (which will also watch the component sour
 ### (MIT License)
 
 ```text
-Copyright 2024 Tom Pietsch
+Copyright 2024 Temmi Pietsch
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of
 this software and associated documentation files (the “Software”), to deal in

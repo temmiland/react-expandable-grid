@@ -1,15 +1,15 @@
 {
-  "name": "@tomxpcvx/react-expandable-grid",
-  "version": "1.1.1",
-  "description": "A React grid component with an expanding detail view",
+  "name": "@temmiland/react-expandable-grid",
+  "version": "1.1.2",
+  "description": "react-expandable-grid is a simple-to-use component designed to create grids with an expanding detail view.",
   "repository": {
     "type": "git",
-    "url": "https://github.com/tomxpcvx/react-expandable-grid.git"
+    "url": "https://github.com/temmiland/react-expandable-grid.git"
   },
   "bugs": {
-    "url": "https://github.com/tomxpcvx/react-expandable-grid.git"
+    "url": "https://github.com/temmiland/react-expandable-grid.git"
   },
-  "homepage": "https://tomxpcvx.dev/react-expandable-grid",
+  "homepage": "https://temmi.land/projects/react-expandable-grid",
   "type": "module",
   "main": "dist/react-expandable-grid.js",
   "types": "dist/main.d.ts",
@@ -26,7 +26,7 @@
     "thumbnail"
   ],
   "private": false,
-  "author": "Tom Pietsch <hello@tomxpcvx.dev>",
+  "author": "Temmi Pietsch <welcome@temmi.land>",
   "license": "MIT",
   "scripts": {
     "dev": "storybook dev -p 6006",
