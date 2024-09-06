@@ -1,6 +1,6 @@
 {
   "name": "@temmiland/react-expandable-grid",
-  "version": "1.1.2",
+  "version": "1.1.6",
   "description": "react-expandable-grid is a simple-to-use component designed to create grids with an expanding detail view.",
   "repository": {
     "type": "git",

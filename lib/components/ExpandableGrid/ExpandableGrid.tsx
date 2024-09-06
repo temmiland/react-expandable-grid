@@ -33,8 +33,13 @@ import useElementWidth from '../../hooks/useElementWidth';
  *     - The component for the expanded element.
  */
 export type ExpandableElement = {
-	expandableElement: React.FC<{ currentIndex: number | undefined }>;
-	expandedElement: React.FC<{ currentIndex: number | undefined, close: () => void }>;
+	expandableElement: React.FC<{
+		currentIndex: number | undefined
+	}>;
+	expandedElement: React.FC<{
+		currentIndex: number | undefined,
+		close: () => void
+	}>;
 };
 
 /**
@@ -71,10 +76,14 @@ export const ExpandableGrid: React.FC<ExpandableGridProps> = ({
 	const [ selectedIndex, setSelectedIndex ] = useState<number | undefined>(
 		defaultSelectedIndex! + 1
 	);
-	
+
 	const maxExpandedElementsPerRow = Math.floor(width / expandableElementWidthInPx);
 
 	const totalRows = Math.ceil(elements.length / maxExpandedElementsPerRow);
+
+	if (selectedIndex !== undefined && selectedIndex > elements.length) {
+		setSelectedIndex(1);
+	}
 
 	const handleClick = (index: number | undefined) => {
 		setSelectedIndex(selectedIndex === index ? undefined : index);
@@ -84,8 +93,14 @@ export const ExpandableGrid: React.FC<ExpandableGridProps> = ({
 		const ExpandableComponent = elements[index - 1].expandableElement;
 
 		return (
-			<div key={ 'expandable-' + index } onClick={ () => handleClick(index) }>
-				<ExpandableComponent currentIndex={ index } />
+			<div
+				className={"expandable expandable-" + index}
+				key={ 'expandable-' + index }
+				onClick={ () => handleClick(index) }
+			>
+				<ExpandableComponent
+					currentIndex={ index }
+				/>
 			</div>
 		);
 	};
@@ -94,10 +109,13 @@ export const ExpandableGrid: React.FC<ExpandableGridProps> = ({
 		const ExpandedComponent = elements[index - 1].expandedElement;
 
 		return (
-			<div style={ {
-				display: selectedIndex ? 'block' : 'none',
-				width: '100%'
-			} }>
+			<div
+				className={"expanded expanded-" + index}
+				style={ {
+					display: selectedIndex ? 'block' : 'none',
+					width: '100%'
+				} }
+			>
 				<div key={ 'expanded-' + index }>
 					<ExpandedComponent
 						currentIndex={ selectedIndex }
@@ -110,6 +128,7 @@ export const ExpandableGrid: React.FC<ExpandableGridProps> = ({
 
 	return (
 		<div
+			className={"expandable-grid"}
 			ref={elemReference}
 			style={ {
 				display: 'flex',
