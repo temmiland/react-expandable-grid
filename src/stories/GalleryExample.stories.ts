@@ -21,7 +21,7 @@
 	OTHER DEALINGS IN THE SOFTWARE.
 */
 
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import { Gallery } from '../examples/Gallery';
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
@@ -34,8 +34,8 @@ const meta = {
 			options: ['space-between', 'space-around', 'space-evenly'],
 			control: {
 				type: 'select'
-			},
-		},
+			}
+		}
 	},
 	parameters: {
 		docs: {
@@ -79,18 +79,22 @@ const meta = {
 					+ '                <div style={{\n'
 					+ '                    width: \'70%\',\n'
 					+ '                    padding: \'15px 20px 25px 0\',\n'
-					+ '                    fontFamily: \'Helvetica Neue, Helvetica, Arial, sans-serif\',\n'
+					+ '                    fontFamily: \'Helvetica Neue, Helvetica, Arial, '
+					+ 'sans-serif\',\n'
 					+ '                    color: \'black\',\n'
 					+ '                }}>\n'
-					+ '                    <p style={ { fontWeight: 800, fontSize: 14 } }>{ imageUrls[currentIndex! % imageUrls.length].title }</p>\n'
-					+ '                    <p style={ { fontWeight: 400, fontSize: 13 } }>{ imageUrls[currentIndex! % imageUrls.length].desc }</p>\n'
+					+ '                    <p style={ { fontWeight: 800, fontSize: 14 } }>'
+					+ '{ imageUrls[currentIndex! % imageUrls.length].title }</p>\n'
+					+ '                    <p style={ { fontWeight: 400, fontSize: 13 } }>'
+					+ '{ imageUrls[currentIndex! % imageUrls.length].desc }</p>\n'
 					+ '                    <p style={ { margin: \'20px 0\', fontSize: 13 } }>\n'
 					+ '                        <a style={{\n'
 					+ '                            textDecoration: \'none\',\n'
 					+ '                            padding: \'0.5rem\',\n'
 					+ '                            border: \'1px solid #333333\',\n'
 					+ '                            color: \'black\'\n'
-					+ '                        }} href={ imageUrls[currentIndex! % imageUrls.length].href }>\n'
+					+ '                        }} href={ imageUrls[currentIndex! % imageUrls'
+					+ '.length].href }>\n'
 					+ '                            { \'Link\' }\n'
 					+ '                        </a>\n'
 					+ '                        <a style={{\n'

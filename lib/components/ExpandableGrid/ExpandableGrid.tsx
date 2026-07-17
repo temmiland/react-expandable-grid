@@ -67,7 +67,7 @@ export const ExpandableGrid: React.FC<ExpandableGridProps> = ({
 	elements,
 	expandableElementWidthInPx,
 	fbJustifyContent: flexboxJustifyContent = 'space-between',
-	defaultSelectedIndex = undefined,
+	defaultSelectedIndex = undefined
 }: ExpandableGridProps): React.ReactElement => {
 
 	const [ width, elemReference ] = useElementWidth();
@@ -94,9 +94,17 @@ export const ExpandableGrid: React.FC<ExpandableGridProps> = ({
 
 		return (
 			<div
-				className={"expandable expandable-" + index}
+				className={ 'expandable expandable-' + index }
 				key={ 'expandable-' + index }
+				role={ 'button' }
+				tabIndex={ 0 }
 				onClick={ () => handleClick(index) }
+				onKeyDown={ (event) => {
+					if (event.key === 'Enter' || event.key === ' ') {
+						event.preventDefault();
+						handleClick(index);
+					}
+				} }
 			>
 				<ExpandableComponent
 					currentIndex={ index }
@@ -110,7 +118,7 @@ export const ExpandableGrid: React.FC<ExpandableGridProps> = ({
 
 		return (
 			<div
-				className={"expanded expanded-" + index}
+				className={ 'expanded expanded-' + index }
 				style={ {
 					display: selectedIndex ? 'block' : 'none',
 					width: '100%'
@@ -128,12 +136,12 @@ export const ExpandableGrid: React.FC<ExpandableGridProps> = ({
 
 	return (
 		<div
-			className={"expandable-grid"}
-			ref={elemReference}
+			className={ 'expandable-grid' }
+			ref={ elemReference }
 			style={ {
 				display: 'flex',
 				flexWrap: 'wrap',
-				justifyContent: flexboxJustifyContent,
+				justifyContent: flexboxJustifyContent
 			} }
 		>
 			{

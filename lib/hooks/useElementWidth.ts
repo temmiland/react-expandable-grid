@@ -30,14 +30,14 @@ import {
 
 /**
  * A hook that returns the width of a DOM element and a ref to that element.
- * @returns {[number, RefObject<HTMLDivElement>]} - An array containing the width of the element and
- *     a ref to it.
+ * @returns {[number, RefObject<HTMLDivElement | null>]} - An array containing the width of the
+ *     element and a ref to it.
  */
-export default function useElementWidth(): [number, RefObject<HTMLDivElement>]  {
+export default function useElementWidth(): [number, RefObject<HTMLDivElement | null>]  {
 	const reference = useRef<HTMLDivElement>(null);
 
 	const [width, setWidth] = useState<number>(0);
-	
+
 	useEffect(() => {
 		const element = reference.current
 
@@ -47,11 +47,11 @@ export default function useElementWidth(): [number, RefObject<HTMLDivElement>]  
 			setWidth(element.clientWidth)
 		}
 
-		window.addEventListener("resize", updateWidth)
+		window.addEventListener('resize', updateWidth)
 		updateWidth()
 
-		return () => window.removeEventListener("resize", updateWidth)
+		return () => window.removeEventListener('resize', updateWidth)
 	}, [])
-	
+
 	return [width, reference]
 }

@@ -21,7 +21,7 @@
 	OTHER DEALINGS IN THE SOFTWARE.
 */
 
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import { Simple } from '../examples/Simple';
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
@@ -34,8 +34,8 @@ const meta = {
 			options: ['space-between', 'space-around', 'space-evenly'],
 			control: {
 				type: 'select'
-			},
-		},
+			}
+		}
 	},
 	parameters: {
 		docs: {

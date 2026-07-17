@@ -27,7 +27,7 @@ import { ExpandableElement } from '../../../lib/components/ExpandableGrid';
 type SimpleProps = {
 	size: number,
 	elements: number,
-	fbJustifyContent: "space-between" | "space-around" | "space-evenly"
+	fbJustifyContent: 'space-between' | 'space-around' | 'space-evenly'
 }
 
 export const Simple = ({ size, elements, fbJustifyContent }: SimpleProps) => (
@@ -61,6 +61,6 @@ export const Simple = ({ size, elements, fbJustifyContent }: SimpleProps) => (
 		}) }
 		expandableElementWidthInPx={ size }
 		fbJustifyContent={ fbJustifyContent }
-		defaultSelectedIndex={1}
+		defaultSelectedIndex={ 1 }
 	/>
 );

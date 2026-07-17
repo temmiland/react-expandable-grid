@@ -29,7 +29,9 @@ import dts from 'vite-plugin-dts'
 export default () => defineConfig({
 	plugins: [
 		react(),
-		dts({ include: ['lib'] })
+		dts({
+			include: ['lib']
+		})
 	],
 	build: {
 		copyPublicDir: false,
