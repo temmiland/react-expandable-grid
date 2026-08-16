@@ -159,10 +159,10 @@ export const ExpandableGrid: React.FC<ExpandableGridProps> = ({
 					// last one in a selected row or one located in the last row.
 					if (isLastExpandedElementInSelectedRow || (isLastRow && isLastTile)) {
 						return (
-							<>
+							<React.Fragment key={ 'grid-item-' + (i + 1) }>
 								{ renderExpandableElement(i + 1) }
 								{ renderExpandedElement(i + 1) }
-							</>
+							</React.Fragment>
 						);
 					}
 
